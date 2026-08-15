@@ -28,6 +28,7 @@ jobs:
       run: |
         python3 -m buildozer init
         sed -i 's/source.include_exts = py,png,jpg,kv,atlas/source.include_exts = py,png,txt/g' buildozer.spec
+        sed -i 's/requirements = python3,kivy/requirements = python3==3.10.12,kivy/g' buildozer.spec
         yes | python3 -m buildozer -v android debug
 
     - name: Upload APK
